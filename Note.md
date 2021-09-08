@@ -1,6 +1,7 @@
 # Coding Notes
 
 ## 1781 · Reverse ASCll Encoded String
+<span style="color:green">Easy</span>\
 [Problem address](https://github.com/xiaotied/learn-coding/blob/master/1781%20%C2%B7%20Reverse%20ASCII%20Encoded%20Strings.py)
 #### Notes
 1. (Inclusive, exclusive)
@@ -42,6 +43,7 @@ print(ans)
 
 
 ## 146 · Lowercase to Uppercase II
+<span style="color: rgb(50, 197, 255)">Naive</span>\
 [LintCode Address](https://www.lintcode.com/problem/146)
 #### Notes
 1. ~~`upper(var)`~~ use `var.upper()`
@@ -52,8 +54,8 @@ def lowercaseToUppercase2(self, str):
     return str.upper()
 ```
 
-## 1784 · Decrease To Be Palindrome
-Easy \
+### 1784 · Decrease To Be Palindrome
+<span style="color:green">Easy</span> \
 [LintCode Address](https://www.lintcode.com/problem/1784)
 #### Notes
 1. `ord()` function transfer str to ASCII
@@ -63,7 +65,7 @@ Easy \
     5. Use `//` to do a down divide 
 4. Use index to get particular str in python
 
-``` python
+```python
 def numberOfOperations(self, s):
     # Write your code here
     cnt = 0
