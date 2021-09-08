@@ -47,9 +47,9 @@ print(ans)
 1. ~~`upper(var)`~~ use `var.upper()`
 
 ```python
-    def lowercaseToUppercase2(self, str):
-        # write your code here
-        return str.upper()
+def lowercaseToUppercase2(self, str):
+    # write your code here
+    return str.upper()
 ```
 
 ## 1784 · Decrease To Be Palindrome
