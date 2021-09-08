@@ -23,8 +23,9 @@ for i in range(0, len(encodeString),2):
 # reverse the string outside the for loop
 res = res[::-1]
 print(res)
+```
 
-
+```python
 # method 2
 ans = ""
 
@@ -40,8 +41,6 @@ for i in range(len(encodeString)-1,0,-2):
     ans += chr(asciiNumber)
 print(ans)
 ```
-
-
 ## 146 · Lowercase to Uppercase II
 <span style="color: rgb(50, 197, 255)">Naive</span>\
 [LintCode Address](https://www.lintcode.com/problem/146)
@@ -54,7 +53,7 @@ def lowercaseToUppercase2(self, str):
     return str.upper()
 ```
 
-### 1784 · Decrease To Be Palindrome
+## 1784 · Decrease To Be Palindrome
 <span style="color:green">Easy</span> \
 [LintCode Address](https://www.lintcode.com/problem/1784)
 #### Notes
@@ -62,7 +61,7 @@ def lowercaseToUppercase2(self, str):
 2. Two pointer
     3. Start from beginning and end
     4. For loop length should be half of the input string
-    5. Use `//` to do a down divide 
+    5. Use `//` to do a floor value 
 4. Use index to get particular str in python
 
 ```python
@@ -75,3 +74,33 @@ def numberOfOperations(self, s):
         return cnt
 
 ```
+
+## 958 · Palindrome Data Stream
+<span style="color:green">Easy</span> \
+[LintCode Address](https://www.lintcode.com/problem/958)
+#### Notes
+1. Brute force
+2. Palindrome 的奇偶性\
+
+| |number of a | number of b| 几个字母出现了奇数次| Palindrome|
+| ----------- | ----------- | ----------- | ----------- |
+| a| 1|0|1|1|
+|ab|1|1|2|0|
+|aba|2|1|1|1|
+|abab|2|2|0|1|
+|ababa|3|2|1|1|
+
+- When the odd appear **\>1** then not palindrome\
+
+
+```python
+def getStream(self, s):
+    # check whether the string is None
+    if s is None or len(s) == 0:
+        return None
+    # count the number of letter that appeared odd times
+    odd_letter_cnt = 0
+    result = [0 for _ in range(len(s))]
+```
+
+
