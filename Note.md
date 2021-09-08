@@ -6,7 +6,7 @@
 1. (Inclusive, exclusive)
 2. Slice
 3. **It is important to identify the res outside the loop**
-4. **The input is string; it should be convert to int to use chr()**
+4. **The input is string; it should be convert to int to use `chr()`**
 
 ```python
 # method 1
@@ -44,10 +44,32 @@ print(ans)
 ## 146 · Lowercase to Uppercase II
 [LintCode Address](https://www.lintcode.com/problem/146)
 #### Notes
-1. ~~upper(var)~~ use var.upper()
+1. ~~`upper(var)`~~ use `var.upper()`
 
 ```python
     def lowercaseToUppercase2(self, str):
         # write your code here
         return str.upper()
+```
+
+### 1784 · Decrease To Be Palindrome
+Easy \
+[LintCode Address](https://www.lintcode.com/problem/1784)
+#### Notes
+1. `ord()` function transfer str to ASCII
+2. Two pointer
+    3. Start from beginning and end
+    4. For loop length should be half of the input string
+    5. Use `//` to do a down divide 
+4. Use index to get particular str in python
+
+```
+def numberOfOperations(self, s):
+    # Write your code here
+    cnt = 0
+    
+    for i in range(len(s)//2):
+        cnt += abs(ord(s[i]) - ord(s[len(s)-1-i]))
+        return cnt
+
 ```

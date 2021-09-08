@@ -27,3 +27,8 @@
 s = "abcd"
 
 # Write your code here
+cnt = 0
+
+for i in range(len(s)//2):
+	cnt += abs(ord(s[i]) - ord(s[len(s) - 1 - i]))
+print(cnt)
