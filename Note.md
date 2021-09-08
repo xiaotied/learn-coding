@@ -81,14 +81,16 @@ def numberOfOperations(self, s):
 #### Notes
 1. Brute force
 2. Palindrome 的奇偶性\
+3. 计数器
+4. 如果只有 0 or 1 个字母出现奇数次 就可以组成palindrome
 
-| |number of a | number of b| 几个字母出现了奇数次| Palindrome|
+|  | number of a | number of b | 几个字母出现了奇数次 | Palindrome |
 | ----------- | ----------- | ----------- | ----------- |
-| a| 1|0|1|1|
-|ab|1|1|2|0|
-|aba|2|1|1|1|
-|abab|2|2|0|1|
-|ababa|3|2|1|1|
+| a | 1 | 0 | 1 | 1 |
+| ab | 1 | 1 | 2 | 0 |
+| aba | 2 | 1 | 1 | 1 |
+| abab | 2 | 2 | 0 | 1 |
+| ababa | 3 | 2 | 1 | 1 |
 
 - When the odd appear **\>1** then not palindrome\
 
