@@ -80,7 +80,7 @@ def numberOfOperations(self, s):
 [LintCode Address](https://www.lintcode.com/problem/958)
 #### Notes
 1. Brute force
-2. Palindrome 的奇偶性\
+2. Palindrome 的奇偶性
 
 | |number of a | number of b| 几个字母出现了奇数次| Palindrome|
 | ----------- | ----------- | ----------- | ----------- |
