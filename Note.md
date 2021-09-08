@@ -63,7 +63,7 @@ Easy \
     5. Use `//` to do a down divide 
 4. Use index to get particular str in python
 
-```
+``` python
 def numberOfOperations(self, s):
     # Write your code here
     cnt = 0
