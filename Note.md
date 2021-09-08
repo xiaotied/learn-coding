@@ -6,7 +6,7 @@
 1. (Inclusive, exclusive)
 2. Slice
 3. **It is important to identify the res outside the loop**
-4. **The input is string; it should be convert to int to use chr()**
+4. **The input is string; it should be converted to int to use chr()**
 
 ''' Python
 
