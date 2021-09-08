@@ -80,7 +80,7 @@ def numberOfOperations(self, s):
 [LintCode Address](https://www.lintcode.com/problem/958)
 #### Notes
 1. Brute force
-2. Palindrome 的奇偶性
+2. Palindrome 的奇偶性\
 
 | |number of a | number of b| 几个字母出现了奇数次| Palindrome|
 | ----------- | ----------- | ----------- | ----------- |
@@ -100,7 +100,20 @@ def getStream(self, s):
         return None
     # count the number of letter that appeared odd times
     odd_letter_cnt = 0
+    # create a list contain the same length as input string
     result = [0 for _ in range(len(s))]
+    # count the number of letters appeared
+    letters = [0 for _ in range(26)]
+    
+    for i in range(len(s)):
+        letters[ord(s[i]) - ord("a")] += 1
+        if letters[ord(s[i]) - ord("a")] % 2 == 1:
+            odd_letter_cnt += 1
+        else:
+            odd_letter_cnt -= 1
+        result[i] = 0 if odd_letter_cnt > 1 else 1
+    return result
+
 ```
 
 
