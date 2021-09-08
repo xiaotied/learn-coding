@@ -84,7 +84,7 @@ def numberOfOperations(self, s):
 3. 计数器
 4. 如果只有 0 or 1 个字母出现奇数次 就可以组成palindrome
 
-|  | number of a | number of b | 几个字母出现了奇数次 | Palindrome |
+|   | number of a | number of b | 几个字母出现了奇数次 | Palindrome |
 | ----------- | ----------- | ----------- | ----------- |
 | a | 1 | 0 | 1 | 1 |
 | ab | 1 | 1 | 2 | 0 |
