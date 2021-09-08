@@ -52,7 +52,7 @@ print(ans)
         return str.upper()
 ```
 
-### 1784 · Decrease To Be Palindrome
+## 1784 · Decrease To Be Palindrome
 Easy \
 [LintCode Address](https://www.lintcode.com/problem/1784)
 #### Notes
