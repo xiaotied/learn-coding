@@ -1,4 +1,12 @@
-# Coding Notes
+---
+Title: LintCode Problems Notes 
+Author: Xiaotie Ding  
+---
+
+# Coding Problem Notes
+
+[TOC]
+
 
 ## 1781 · Reverse ASCll Encoded String
 <span style="color:green">Easy</span>\
