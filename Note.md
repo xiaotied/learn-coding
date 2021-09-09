@@ -2,7 +2,7 @@
 
 ## 1781 · Reverse ASCll Encoded String
 <span style="color:green">Easy</span>\
-[Problem address](https://github.com/xiaotied/learn-coding/blob/master/1781%20%C2%B7%20Reverse%20ASCII%20Encoded%20Strings.py)
+[Problem address](https://github.com/xiaotied/learn-coding/blob/master/problems/1781%20%C2%B7%20Reverse%20ASCII%20Encoded%20Strings.py)
 #### Notes
 1. (Inclusive, exclusive)
 2. Slice
@@ -43,7 +43,7 @@ print(ans)
 ```
 ## 146 · Lowercase to Uppercase II
 <span style="color: rgb(50, 197, 255)">Naive</span>\
-[LintCode Address](https://www.lintcode.com/problem/146)
+[Link](https://www.lintcode.com/problem/146)
 #### Notes
 1. ~~`upper(var)`~~ use `var.upper()`
 
@@ -59,9 +59,9 @@ def lowercaseToUppercase2(self, str):
 #### Notes
 1. `ord()` function transfer str to ASCII
 2. Two pointer
-    3. Start from beginning and end
-    4. For loop length should be half of the input string
-    5. Use `//` to do a floor value 
+    i. Start from beginning and end
+    ii. For loop length should be half of the input string
+    iii. Use `//` to do a floor value 
 4. Use index to get particular str in python
 
 ```python
@@ -77,7 +77,7 @@ def numberOfOperations(self, s):
 
 ## 958 · Palindrome Data Stream
 <span style="color:green">Easy</span> \
-[LintCode Address](https://www.lintcode.com/problem/958)
+[Link](https://www.lintcode.com/problem/958)
 #### Notes
 1. Brute force
 2. Palindrome 的奇偶性\
@@ -118,4 +118,51 @@ def getStream(self, s):
 
 ```
 
+## 1819 · Longest Semi Alternating Substring
+<span style="color:green">Easy</span> \
+[Link](https://www.lintcode.com/problem/1819)
+## Notes
+1. Two pointers
+2. `prev` and `cure` are string variables not the index
+3. `for end in range()` end is index of end point.
+4. `start` is the index not string.
+5. `dup_cnt` is 1 because the pointer at least points to one node. 
+6. `if dup_cnt == 3:`  move start pointer to one node ahead the end pointer. So the `dup_cnt = 2`
+7. Don't forget to check `None` string.
 
+![](/images/1819.png)
+
+```python
+def longestSemiAlternatingSubstring(self, s):
+    # write your code here
+    if s is None or len(s) == 0:
+        return None
+    
+    start = 0
+    dup_cnt = 1
+    max_len = 0
+
+    for end in range(1, len(s)):
+        prev = s[end - 1]
+        curr = s[end]
+
+        if prev == curr:
+            dup_cnt += 1
+            if dup_cnt == 3:
+                start = end - 1
+                dup_cnt = 2
+        else:
+            dup_cnt = 1
+        
+        max_len = max(max_len, end - start + 1)
+    return max_len
+
+```
+
+## 1540 · Can Convert
+<span style="color:green">Easy</span> \
+[LintCode Address](https://www.lintcode.com/problem/1540)
+
+#### Notes
+1. Two pointers
+2. 
