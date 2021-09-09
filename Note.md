@@ -4,9 +4,18 @@ Author: Xiaotie Ding
 ---
 
 # Coding Problem Notes
-
-{{TOC}}
-
+  * [1781 · Reverse ASCll Encoded String](#1781---reverse-ascll-encoded-string)
+      - [Notes](#notes)
+  * [146 · Lowercase to Uppercase II](#146---lowercase-to-uppercase-ii)
+      - [Notes](#notes-1)
+  * [1784 · Decrease To Be Palindrome](#1784---decrease-to-be-palindrome)
+      - [Notes](#notes-2)
+  * [958 · Palindrome Data Stream](#958---palindrome-data-stream)
+      - [Notes](#notes-3)
+  * [1819 · Longest Semi Alternating Substring](#1819---longest-semi-alternating-substring)
+      - [Notes](#notes-4)
+  * [1540 · Can Convert](#1540---can-convert)
+      - [Notes](#notes-5)
 
 ## 1781 · Reverse ASCll Encoded String
 <span style="color:green">Easy</span>\
