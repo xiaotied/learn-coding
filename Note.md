@@ -172,4 +172,20 @@ def longestSemiAlternatingSubstring(self, s):
 
 #### Notes
 1. Two pointers
-2. 
+2. Greedy method
+
+```python
+def canConvert(self, s, t):
+    # Write your code here
+    if s is None or len(s) == 0:
+        return False
+    
+    index_t = 0
+    
+    for c in s:
+        if c == t[index_t]:
+            index_t += 1
+            if index_t == len(t):
+                return True
+    return False
+```
