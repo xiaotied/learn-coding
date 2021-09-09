@@ -5,7 +5,7 @@ Author: Xiaotie Ding
 
 # Coding Problem Notes
 
-[TOC]
+{{TOC}}
 
 
 ## 1781 · Reverse ASCll Encoded String
