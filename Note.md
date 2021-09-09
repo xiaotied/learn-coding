@@ -59,9 +59,9 @@ def lowercaseToUppercase2(self, str):
 #### Notes
 1. `ord()` function transfer str to ASCII
 2. Two pointer
-    i. Start from beginning and end
-    ii. For loop length should be half of the input string
-    iii. Use `//` to do a floor value 
+    1. Start from beginning and end
+    2. For loop length should be half of the input string
+    3. Use `//` to do a floor value 
 4. Use index to get particular str in python
 
 ```python
