@@ -129,7 +129,7 @@ def getStream(self, s):
 ## 1819 · Longest Semi Alternating Substring
 <span style="color:green">Easy</span> \
 [Link](https://www.lintcode.com/problem/1819)
-## Notes
+#### Notes
 1. Two pointers
 2. `prev` and `cure` are string variables not the index
 3. `for end in range()` end is index of end point.
