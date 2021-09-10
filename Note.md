@@ -15,6 +15,15 @@ Author: Xiaotie Ding
 2. Slice
 3. **It is important to identify the res outside the loop**
 4. **The input is string; it should be convert to int to use `chr()`**
+5. This is a reverse, return `ans[::-1]`.
+6. Please return "" if an check function has been added since sometime the problem require to return "" instead of `None`.
+
+
+```python
+if encodeString is None or len(encodeString) == 0:
+    return ""
+```
+
 
 ```python
 # method 1
@@ -64,12 +73,15 @@ def lowercaseToUppercase2(self, str):
 <span style="color:green">Easy</span> \
 [LintCode Address](https://www.lintcode.com/problem/1784)
 #### Notes
-1. `ord()` function transfer str to ASCII
-2. Two pointer
+1. the number of operations needed to change s to a palindrome at least in this problem basically is asking what is the sum of ASCII distance between the letter in the symmetrical position. 
+2. Therefore we only need to find ASCII int for each string and then subtract in a symmetrical way.
+2. `ord()` function transfer str to ASCII
+3. Two pointer
     1. Start from beginning and end
     2. For loop length should be half of the input string
     3. Use `//` to do a floor value 
-4. Use index to get particular str in python
+4. Remember the floor value is `//` 
+5. Use index to get particular str in python
 
 ```python
 def numberOfOperations(self, s):
@@ -79,7 +91,6 @@ def numberOfOperations(self, s):
     for i in range(len(s)//2):
         cnt += abs(ord(s[i]) - ord(s[len(s)-1-i]))
         return cnt
-
 ```
 
 ## 958 · Palindrome Data Stream
