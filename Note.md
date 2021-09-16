@@ -200,3 +200,40 @@ def canConvert(self, s, t):
                 return True
     return False
 ```
+
+## 936 · Capitalizes The First Letter
+<span style="color:green">Easy</span> \
+[LintCode Address](https://www.lintcode.com/problem/936)
+
+#### Notes
+1. 'str' object does not support item assignment, which means you cannot do `s[i] = s[i].upper()`. 
+2. Must transfer the str to list and `''.join()` for return.
+3. My code, ~~`if s[0] != " ":`~~, doesn't consider not letter situations; so the correct code should be `if s[0] >= 'a' and s[0] <= 'z':`.
+4. Highlighted solution uses ASCII but mine use `upper.()`.
+
+#### My code
+```python
+def capitalizesFirst(self, s):
+    # Write your code here
+    s = list(s)
+    if s[0] != " ":
+        s[0] = s[0].upper()
+    else: pass
+    for i in range(1, len(s)):
+        if s[i-1] == " " and s[i] != " ":
+            s[i] = s[i].upper()
+    return ''.join(s)
+```
+#### Highlight solution
+```python
+def capitalizesFirst(self, s):
+    # Write your code here
+    n = len(s)
+    s1 = list(s)
+    if s1[0] >= 'a' and s1[0] <= 'z':
+        s1[0] = chr(ord(s1[0]) - 32)
+    for i in range(1, n):
+        if s1[i - 1] == ' ' and s1[i] != ' ':
+            s1[i] = chr(ord(s1[i]) - 32)
+    return ''.join(s1)
+```
