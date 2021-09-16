@@ -237,3 +237,60 @@ def capitalizesFirst(self, s):
             s1[i] = chr(ord(s1[i]) - 32)
     return ''.join(s1)
 ```
+
+## 415 · Valid Palindrome
+<span style="color:orange">Medium</span> \
+[LintCode Address](https://www.lintcode.com/problem/415)
+
+#### Note
+1. `str.isalnum()`
+2. `str.[::-1]`
+3. `str.isdigit()`
+4. `str.isalpha()`
+5. `str.lower()`
+6. Remove all char expect letters and numbers.
+7. Reverse the str and see if it is a palindrome.
+
+#### My code
+```python
+def isPalindrome(self, s):
+    # write your code here
+    s1 = "".join(x for x in s if x.isalnum()).lower()
+    if s is None or len(s) == 0 or s1 == s1[::-1]:
+        return True
+    else: 
+        return False
+```
+
+#### solution 1
+```python
+class Solution:
+    # @param {string} s A string
+    # @return {boolean} Whether the string is a valid palindrome
+    def isPalindrome(self, s):
+        start, end = 0, len(s) - 1
+        while start < end:
+            while start < end and not s[start].isalpha() and not s[start].isdigit():
+                start += 1
+            while start < end and not s[end].isalpha() and not s[end].isdigit():
+                end -= 1
+            if start < end and s[start].lower() != s[end].lower():
+                return False
+            start += 1
+            end -= 1
+        return True
+```
+
+#### Solution 2
+```python
+class Solution:
+    """
+    @param s: A string
+    @return: Whether the string is a valid palindrome
+    """
+    def isPalindrome(self, s):
+        # write your code here
+        s=[c.lower() for c in s if c.isalnum()]
+        
+        return s[0:]==s[::-1]
+```
