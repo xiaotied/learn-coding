@@ -294,3 +294,55 @@ class Solution:
         
         return s[0:]==s[::-1]
 ```
+
+## 483 · Convert Linked List to Array List
+<span style="color:green">Naive</span> \
+[LintCode Address](https://www.lintcode.com/problem/483)
+
+#### Note
+1. The basic concept of linked list.
+2. `self.val = val`
+3. `self.next = next`
+4. How to traverse the linked list? Use `while`
+
+```python
+def toArrayList(self, head):
+    # write your code here
+    ans = []
+    while head is not None:
+        ans.append(head.val)
+        head = head.next
+    return ans
+```
+
+
+## 225 · Find Node in Linked List
+<span style="color:green">Naive</span> \
+[LintCode Address](https://www.lintcode.com/problem/225)
+
+#### Note
+1. Use `while` to go through the linked list.
+2. `else` issue?
+
+#### My solution
+
+```python
+def findNode(self, head, val):
+    # write your code here
+    while head is not None:
+        if head.val == val:
+            return head 
+        else:
+            head = head.next
+    return None
+```
+#### Official solution
+```python
+def findNode(self, head, val):
+    # write your code here
+    while head is not None:
+        if head.val == val:
+            return head 
+            head = head.next
+    return None
+```
