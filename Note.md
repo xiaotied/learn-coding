@@ -343,6 +343,45 @@ def findNode(self, head, val):
     while head is not None:
         if head.val == val:
             return head 
-            head = head.next
+        head = head.next
     return None
+```
+
+## 228 · Middle of Linked List
+<span style="color:green">Naive</span> \
+[LintCode Address](https://www.lintcode.com/problem/228)
+
+#### Note
+1. Have to use slow pointer and faster pointer.
+2. Using `head.next` and `head.next.next` is not correct since `head.next.next` is only two steps ahead of `head`, which is not twice the `head`.
+3. Using `slow = head` `fast = head` `slow = slow.next` `fast = fast.next.next`
+4. Using `while fast.next and fast.next.next is not None` instead of only using `fast.next.next` to avoid `fast.next` is `None` and then `fast.next.next` will return error.
+
+#### My WRONG solution
+```python
+# wrong answer!!!!
+
+def middleNode(self, head):
+    # write your code here
+    if head is None:
+        return None
+    else:
+        while head.next and head.next.next is not None:
+            head = head.next
+        return head
+```
+
+#### Correct solution
+```python
+def middleNode(self, head):
+    # write your code here
+    if head is None:
+        return None
+    else:
+            slow = head
+            fast = head
+        while fast.next and fast.next.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
 ```
