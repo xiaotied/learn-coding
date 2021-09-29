@@ -513,7 +513,6 @@ def reverse(self, head):
 	    head.next = cur_node
 	    cur_node = head
 	    head = temp
-	
 	return cur_node
 ```
 
