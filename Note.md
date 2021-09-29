@@ -395,7 +395,7 @@ def middleNode(self, head):
 2. Check the node after current node and the `val` of current node
 3. Connect inserted node (new node) to `curr_node.next` first.
 4. Then connect current node to new node.
-5. `float("-inf") is negative infinity.
+5. `float("-inf")` is negative infinity.
 6. use `ListNode()` to create a new node; `val` is only value
 
 #### Solution
@@ -517,3 +517,34 @@ def reverse(self, head):
 	return cur_node
 ```
 
+## 165 · Merge Two Sorted Lists
+<span style="color:green">Easy</span> \
+[LintCode Address](https://www.lintcode.com/problem/165)
+#### Note
+1. Create a new temp head
+2. 遍历 l1 and l2
+3. put smaller node to temp.next
+4. Merge not necessary means to combine two list and then sorted
+5. It is better to establish a new one and compare nodes from two linked lists
+6. Choose whatever is smaller and then put in the new linked list or temp
+
+#### Solution
+```python
+def mergeTwoLists(self, l1, l2):
+    # write your code here
+    dummy = ListNode(float("-inf"))
+    temp = dummy
+    while l1 and l2:
+        if l1.val < l2.val:
+            temp.next = l1
+            l1 = l1.next
+        else:
+            temp.next = l2
+            l2 = l2.next
+        temp = temp.next
+    if l1 is None:
+        temp.next = l2
+    else:
+        temp.next = l1
+    return dummy.next
+```
