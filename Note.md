@@ -509,11 +509,12 @@ def reverse(self, head):
     cur_node = None
     
     while head:
-	    temp = head.next
-	    head.next = cur_node
-	    cur_node = head
-	    head = temp
-	return cur_node
+        temp = head.next
+        head.next = cur_node
+        cur_node = head
+        head = temp
+    
+    return cur_node
 ```
 
 ## 165 · Merge Two Sorted Lists
