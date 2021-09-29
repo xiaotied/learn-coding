@@ -417,8 +417,9 @@ def insertNode(self, head, val):
 ```
 
 ## 174 · Remove Nth Node From End of List
-<span style="color:green">Easy</span> \
-[LintCode Address](https://www.lintcode.com/problem/174)
+ <span style="color:green">Easy</span> \
+ [LintCode Address](https://www.lintcode.com/problem/174)
+
 #### Note
 
 #### My solution
@@ -488,3 +489,31 @@ class Solution:
         
         return dummy.next
 ```
+
+## 35 · Reverse Linked List
+<span style="color:green">Easy</span> \
+[LintCode Address](https://www.lintcode.com/problem/35)
+#### Note
+1. How to reverse
+2. Create another linked list (创建一个新链表屁股 然后慢慢往头上移动）
+3. create temp 点 放到 head.next
+4. Head 怼到 新链表屁股
+5. 新链表头 移到 head（旧链表头） 处
+6. Head 通过 temp 点 跳回原链表
+7. `while` loop stop when `head` is `None` since 要遍历所有的点在老链表中
+8. Return new linked list head
+
+```python
+def reverse(self, head):
+    # write your code here
+    cur_node = None
+    
+    while head:
+	    temp = head.next
+	    head.next = cur_node
+	    cur_node = head
+	    head = temp
+	
+	return cur_node
+```
+
