@@ -385,3 +385,106 @@ def middleNode(self, head):
             fast = fast.next.next
         return slow
 ```
+
+## 219 · Insert Node in Sorted Linked List
+<span style="color:green">Easy</span> \
+[LintCode Address](https://www.lintcode.com/problem/219)
+
+#### Note
+1. It is better to use `dummy`; in case `val = 0` and the new node become the `head`
+2. Check the node after current node and the `val` of current node
+3. Connect inserted node (new node) to `curr_node.next` first.
+4. Then connect current node to new node.
+5. `float("-inf") is negative infinity.
+6. use `ListNode()` to create a new node; `val` is only value
+
+#### Solution
+```python
+def insertNode(self, head, val):
+    # write your code here
+    dummy = ListNode(float("-inf"))
+    dummy.next = head
+    cur_Node = dummy
+
+    while cur_Node.next and cur_Node.next.val < val:
+        cur_Node = cur_Node.next
+
+    new_node = ListNode(val)
+    new_node.next = cur_Node.next
+    cur_Node.next = new_node
+
+    return dummy.next
+```
+
+## 174 · Remove Nth Node From End of List
+<span style="color:green">Easy</span> \
+[LintCode Address](https://www.lintcode.com/problem/174)
+#### Note
+
+#### My solution
+1. Get length of the Linked list
+2. Get position of end nth node
+3. Reset the linked list and remove the node at the position
+
+```python
+class Solution:
+    """
+    @param head: The first node of linked list.
+    @param n: An integer
+    @return: The head of linked list.
+    """
+    def removeNthFromEnd(self, head, n):
+        # write your code here
+        dummy = ListNode(float("-inf"))
+        dummy.next = head
+        cur_Node = dummy
+        cnt = 0
+
+        while cur_Node.next:
+            cnt += 1
+            cur_Node = cur_Node.next
+        
+        pos = cnt - n + 1
+        cnt = 0
+        cur_Node = dummy
+
+        while cur_Node.next:
+            cnt += 1 
+            if cnt == pos:
+                cur_Node.next = cur_Node.next.next
+            else:
+                cur_Node = cur_Node.next
+
+        return dummy.next
+
+```
+
+#### Two pointer solution
+1. Fast pointer go first
+2. Slow pointer start to move once the fast pointer moved n times
+3. Now the distance between slow and fast is n and once fast meet the end the slow will stay at the Nth node from the end
+
+```python
+class Solution:
+    """
+    @param head: The first node of linked list.
+    @param n: An integer
+    @return: The head of linked list.
+    """
+    def removeNthFromEnd(self, head, n):
+        # write your code here
+        dummy = ListNode(float("-inf"))
+        dummy.next = head
+        slow = dummy
+        fast = dummy
+
+        for _ in range(0, n):
+            fast = fast.next
+        
+        while fast.next:
+            slow = slow.next
+            fast = fast.next
+        slow.next = slow.next.next
+        
+        return dummy.next
+```
